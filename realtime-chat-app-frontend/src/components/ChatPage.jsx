@@ -23,7 +23,7 @@ function ChatPage({ username }) {
           type: "CONNECT",
         };
         newClient.publish({
-          destination: "/app/chat.add-user", // Prefix with /app
+          destination: "/app/chat.add-user",
           body: JSON.stringify(joinMessage),
         });
         newClient.subscribe("/topic/public", (message) => {
@@ -38,7 +38,7 @@ function ChatPage({ username }) {
             type: "DISCONNECT",
           };
           newClient.publish({
-            destination: "/app/chat.add-user", // Prefix with /app
+            destination: "/app/chat.add-user",
             body: JSON.stringify(leaveMessage),
           });
         }
